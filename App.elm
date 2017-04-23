@@ -1,50 +1,17 @@
 module App exposing (..)
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+-- Setup
+-- Syntax
+-- functions/curry
+-- Record/List/Array
+-- type/Unions
 
-type alias Todo =
-  { name: String
-  , completed: Bool
-  }
+-- Elm Architecture MVU
+-- View (Html module)
+-- Model
+-- Update
 
-type alias Model =
-  List Todo
-
-todos : Model
-todos =
-  [ { name = "David", completed = True }
-  , { name = "Sancho", completed = False }
-  ]
-
-type Msg
-    = AddTodo Todo
-    | Clear
-
-update : Msg -> Model -> Model
-update msg model =
-  case msg of
-    AddTodo todo ->
-      todo :: model
-
-    Clear ->
-      todos
-
-view : Model -> Html Msg
-view model =
-  div [ class "lola" ]
-    [ button
-      [ onClick
-        (AddTodo { name = "cosas", completed = False })
-      ] [ text "AddTodo" ]
-    , h3 [] [ text (toString model) ]
-    ]
-
-main : Program Never Model Msg
-main =
-    Html.beginnerProgram
-        { model = todos
-        , view = view
-        , update = update
-        }
+-- Side Effects
+-- JavaScript Interoperability
+-- Testing
+-- Routing
